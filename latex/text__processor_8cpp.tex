@@ -1,0 +1,167 @@
+\hypertarget{text__processor_8cpp}{}\doxysection{text\+\_\+processor.\+cpp File Reference}
+\label{text__processor_8cpp}\index{text\_processor.cpp@{text\_processor.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for text\+\_\+processor.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{text__processor_8cpp_acac176bbda798ba70a63bf8774f40062}{file\+\_\+exists}} (char filename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Checks if file exists. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{text__processor_8cpp_a65743c223dcbad6d90a7e980c6ef922c}{length}} (char $\ast$str)
+\item 
+int \mbox{\hyperlink{text__processor_8cpp_a79718b7d7d5c2df7a74587bf16fc6a91}{strcpy}} (char $\ast$from, char $\ast$to)
+\item 
+int \mbox{\hyperlink{text__processor_8cpp_a614bf4d6d46a15c08d8a9b1ea724d677}{read\+\_\+filename}} (char filename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Scanning the name of the file to process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{text__processor_8cpp_ae9f9aef48a922137f5fac4a64e1974dc}{read\+\_\+file}} (char filename\mbox{[}$\,$\mbox{]}, char $\ast$input\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Reading the contents of the file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{text__processor_8cpp_a6c21389b9996020d7beb4aa1706e3c67}{sort\+\_\+input}} (char $\ast$input\mbox{[}$\,$\mbox{]}, char $\ast$output\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Sorting the file\textquotesingle{}s lines alphabetically. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{text__processor_8cpp_ae4d0611c6eae1419e53ec8e8e7f93b25}{output\+\_\+file}} (char filename\mbox{[}$\,$\mbox{]}, char $\ast$output\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Outputting the result of the sort. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/08-\/24
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{text__processor_8cpp_acac176bbda798ba70a63bf8774f40062}\label{text__processor_8cpp_acac176bbda798ba70a63bf8774f40062}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!file\_exists@{file\_exists}}
+\index{file\_exists@{file\_exists}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{file\_exists()}{file\_exists()}}
+{\footnotesize\ttfamily int file\+\_\+exists (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Checks if file exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case of success, -\/1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{text__processor_8cpp_a65743c223dcbad6d90a7e980c6ef922c}\label{text__processor_8cpp_a65743c223dcbad6d90a7e980c6ef922c}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!length@{length}}
+\index{length@{length}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily size\+\_\+t length (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{text__processor_8cpp_ae4d0611c6eae1419e53ec8e8e7f93b25}\label{text__processor_8cpp_ae4d0611c6eae1419e53ec8e8e7f93b25}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!output\_file@{output\_file}}
+\index{output\_file@{output\_file}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{output\_file()}{output\_file()}}
+{\footnotesize\ttfamily int output\+\_\+file (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{output\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Outputting the result of the sort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the file \\
+\hline
+{\em output} & the result of sorting the file contents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case of success, -\/1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{text__processor_8cpp_ae9f9aef48a922137f5fac4a64e1974dc}\label{text__processor_8cpp_ae9f9aef48a922137f5fac4a64e1974dc}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily int read\+\_\+file (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{input\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Reading the contents of the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the file \\
+\hline
+{\em input} & contents of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{text__processor_8cpp_a614bf4d6d46a15c08d8a9b1ea724d677}\label{text__processor_8cpp_a614bf4d6d46a15c08d8a9b1ea724d677}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!read\_filename@{read\_filename}}
+\index{read\_filename@{read\_filename}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_filename()}{read\_filename()}}
+{\footnotesize\ttfamily int read\+\_\+filename (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Scanning the name of the file to process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case of success, -\/1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{text__processor_8cpp_a6c21389b9996020d7beb4aa1706e3c67}\label{text__processor_8cpp_a6c21389b9996020d7beb4aa1706e3c67}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!sort\_input@{sort\_input}}
+\index{sort\_input@{sort\_input}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{sort\_input()}{sort\_input()}}
+{\footnotesize\ttfamily int sort\+\_\+input (\begin{DoxyParamCaption}\item[{char $\ast$}]{input\mbox{[}$\,$\mbox{]},  }\item[{char $\ast$}]{output\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Sorting the file\textquotesingle{}s lines alphabetically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & file contents \\
+\hline
+{\em output} & the result of sorting the file contents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case of success, -\/1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{text__processor_8cpp_a79718b7d7d5c2df7a74587bf16fc6a91}\label{text__processor_8cpp_a79718b7d7d5c2df7a74587bf16fc6a91}} 
+\index{text\_processor.cpp@{text\_processor.cpp}!strcpy@{strcpy}}
+\index{strcpy@{strcpy}!text\_processor.cpp@{text\_processor.cpp}}
+\doxysubsubsection{\texorpdfstring{strcpy()}{strcpy()}}
+{\footnotesize\ttfamily int strcpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{from,  }\item[{char $\ast$}]{to }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & \\
+\hline
+{\em to} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}

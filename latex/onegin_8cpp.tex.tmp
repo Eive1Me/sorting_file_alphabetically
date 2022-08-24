@@ -1,0 +1,27 @@
+\hypertarget{onegin_8cpp}{}\doxysection{onegin.\+cpp File Reference}
+\label{onegin_8cpp}\index{onegin.cpp@{onegin.cpp}}
+{\ttfamily \#include \char`\"{}text\+\_\+processor.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for onegin.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{onegin_8cpp_ad53223b8779f25caeddb70a3b9172967}\label{onegin_8cpp_ad53223b8779f25caeddb70a3b9172967}} 
+int \mbox{\hyperlink{onegin_8cpp_ad53223b8779f25caeddb70a3b9172967}{main}} (const int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em H\+E\+L\+LP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/08-\/24
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
