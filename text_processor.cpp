@@ -163,18 +163,11 @@ int compare(const void * a, const void * b)
     }
     char * ch_a = (*(char **) a);
     char * ch_b = (*(char **) b);
-    size_t n = length(ch_a);
-    size_t m = length(ch_b);
-    for (size_t i = 0; i < n; i++){
-        if (ch_a[i] < ch_b[i]){
-            return -1;
-        }
-
-        if (ch_a[i] > ch_b[i]){
-            return 1;
-        }
+    while ((*ch_a == *ch_b) && (ch_a != 0)){
+        *ch_a++;
+        *ch_b++;
     }
-    return 0;
+    return *ch_a - *ch_b;
 }
 
 /**
