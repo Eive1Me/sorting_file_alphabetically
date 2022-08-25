@@ -15,6 +15,9 @@
 int file_exists(char filename[]);
 size_t length(char * str);
 int strcpy(char * from, char * to);
+int compare(const void * a, const void * b);
+int arrcpy(char * from[], char * to[]);
+size_t arrlen(char * arr[]);
 
 /**
  * @brief 
@@ -38,7 +41,7 @@ int read_filename(char filename[])
  * Reading the contents of the file
  * @param filename name of the file
  * @param input contents of the file 
- * @return int 
+ * @return int 0 in case of success, -1 otherwise
  */
 int read_file(char filename[], char * input[])
 {
@@ -102,7 +105,75 @@ size_t length(char * str)
  */
 int sort_input(char * input[], char * output[])
 {
+    arrcpy(input, output);
+    size_t n = arrlen(output);
+    qsort(output, n, sizeof(char *), compare);
+    return 0;
+}
 
+/**
+ * @brief 
+ * Copies one arr to another
+ * @param from arr to copy from
+ * @param to arr to copy to
+ * @return int 0 in case of success, -1 otherwise
+ */
+int arrcpy(char * from[], char * to[])
+{
+    if (nullptr == from || nullptr == to){
+        return -1;
+    }
+    size_t n = arrlen(from);
+    for (size_t i = 0; i < n; i++){
+        to[i] = (char *) calloc(length(from[i]), sizeof(char));
+        strcpy(from[i], to[i]);
+    }
+    return 0;
+}
+
+/**
+ * @brief 
+ * returns the length of an array
+ * @param arr array
+ * @return size_t length
+ */
+size_t arrlen(char * arr[])
+{
+    if (nullptr == arr){
+        return -1;
+    }
+    size_t i = 0;
+    while (nullptr != arr[i]){
+        i++;
+    }
+    return i;
+}
+
+/**
+ * @brief 
+ * Compare two lines
+ * @param a first arg
+ * @param b second arg
+ * @return int 0 if a is equal or greater than b, -1 otherwise
+ */
+int compare(const void * a, const void * b)
+{
+    if (nullptr == a || nullptr == b){
+        return -1;
+    }
+    char * ch_a = (*(char **) a);
+    char * ch_b = (*(char **) b);
+    size_t n = length(ch_a);
+    size_t m = length(ch_b);
+    for (size_t i = 0; i < n; i++){
+        if (ch_a[i] < ch_b[i]){
+            return -1;
+        }
+
+        if (ch_a[i] > ch_b[i]){
+            return 1;
+        }
+    }
     return 0;
 }
 
@@ -115,7 +186,13 @@ int sort_input(char * input[], char * output[])
  */
 int output_file(char filename[], char * output[])
 {
-
+    printf("~~~~Sorted~~~~\n");
+    size_t n = arrlen(output);
+    for (size_t i = 0; i < n; i++)
+    {
+        printf("%s", output[i]);
+    }
+    
     return 0;
 }
 
@@ -127,8 +204,9 @@ int output_file(char filename[], char * output[])
  */
 int file_exists(char filename[])
 {
-    std::ifstream f(filename);
-    if (f.good()){
+    FILE * file;
+    if((file = fopen(filename,"r"))!=NULL){
+        fclose(file);
         return 0;
     }
     return -1;
