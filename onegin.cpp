@@ -14,11 +14,11 @@
 
 int main(const int argc, const char* argv[]) 
 {
-    char filename[20] = "Onegin.txt"; 
+    char filename[30] = {}; 
     char * input[20] = {};
     char * output[20] = {};
 
-    // read_filename(filename);
+    read_filename(filename);
     read_file(filename, input);
     sort_input(input, output);
     output_file(filename, output);

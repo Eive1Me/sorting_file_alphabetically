@@ -18,6 +18,7 @@ int strcpy(char * from, char * to);
 int compare(const void * a, const void * b);
 int arrcpy(char * from[], char * to[]);
 size_t arrlen(char * arr[]);
+int strconcat(char * str1, char * str2, char * res);
 
 /**
  * @brief 
@@ -29,9 +30,16 @@ int read_filename(char filename[])
 {
     while (-1 == file_exists(filename))
     {
+        char tmp[20] = "";
         printf("Введите имя файла.\n");
-        scanf("%s", filename);
+        scanf("%s", tmp);
+        if ('.' == tmp[0]){
+            strcpy("Onegin.txt", filename);
+        } else {
+            strcpy(tmp, filename);
+        }
     }
+    printf("no %s\n", filename);
     
     return 0;
 }
@@ -179,12 +187,48 @@ int compare(const void * a, const void * b)
  */
 int output_file(char filename[], char * output[])
 {
-    printf("~~~~Sorted~~~~\n");
     size_t n = arrlen(output);
-    for (size_t i = 0; i < n; i++)
-    {
+    size_t m = 4 + length(filename);
+    
+    char resfilename[m] = {};
+    char prefix[] = "Res_";
+    strconcat(prefix, filename, resfilename);
+
+    FILE *file = fopen(resfilename, "w");
+    printf("~~~~~ Sorted ~~~~~\n");
+    for (size_t i = 0; i < n; i++){
+        fprintf(file, output[i]);
         printf("%s", output[i]);
     }
+    fclose(file);
+
+    return 0;
+}
+
+/**
+ * @brief 
+ * Concatination of 2 strings
+ * @param str1 1st str
+ * @param str2 2nd str
+ * @param res result string
+ * @return int 0 in case of success, -1 otherwise
+ */
+int strconcat(char * str1, char * str2, char * res)
+{
+    if (nullptr == str1 || nullptr == str2){
+        return -1;
+    }
+    int i = 0, j = 0;
+    while ('\0' != str1[j]){
+        res[i] = str1[j]; 
+        i++; j++;
+    }
+    j = 0;
+    while ('\0' != str2[j]){
+        res[i] = str2[j];
+        i++; j++;
+    }
+    res[i] = '\0';
     
     return 0;
 }
