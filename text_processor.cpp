@@ -20,6 +20,9 @@ int arrcpy(char * from[], char * to[]);
 size_t arrlen(char * arr[]);
 int strconcat(char * str1, char * str2, char * res);
 
+//Prefix before the output file name
+char prefix[] = "Res_";
+
 /**
  * @brief 
  * Scanning the name of the file to process
@@ -188,10 +191,9 @@ int compare(const void * a, const void * b)
 int output_file(char filename[], char * output[])
 {
     size_t n = arrlen(output);
-    size_t m = 4 + length(filename);
+    size_t m = length(prefix) + length(filename);
     
     char resfilename[m] = {};
-    char prefix[] = "Res_";
     strconcat(prefix, filename, resfilename);
 
     FILE *file = fopen(resfilename, "w");
@@ -215,7 +217,7 @@ int output_file(char filename[], char * output[])
  */
 int strconcat(char * str1, char * str2, char * res)
 {
-    if (nullptr == str1 || nullptr == str2){
+    if (nullptr == str1 || nullptr == str2 || nullptr == res){
         return -1;
     }
     int i = 0, j = 0;
@@ -241,8 +243,8 @@ int strconcat(char * str1, char * str2, char * res)
  */
 int file_exists(char filename[])
 {
-    FILE * file;
-    if((file = fopen(filename,"r"))!=NULL){
+    FILE * file = fopen(filename,"r");
+    if(file!=NULL){
         fclose(file);
         return 0;
     }
